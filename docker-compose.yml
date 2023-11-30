@@ -1,7 +1,7 @@
 version: "2"
 services:
   node:
-    container_name: node-text-processor-2
+    container_name: node-text-processor-3
     build:
       context: .
       dockerfile: Dockerfile
@@ -13,5 +13,5 @@ services:
     ports:
       - 3000:3000
       - 5173:5173
-    command: "npm run dev"
+    command: bash -c "npm install && npm rundev"
     
