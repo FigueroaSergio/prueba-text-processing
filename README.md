@@ -10,6 +10,12 @@ The next node application is able to:
 ## Requirements
 - Nodejs  18 OR Docker whit docker compose
 
+Clone the project
+
+```bash
+  git clone https://github.com/FigueroaSergio/prueba-text-processing.git
+```
+
 ### Install with node
 ```bash
 npm install 
@@ -23,4 +29,8 @@ Open on the browser [localhost:5713](http://localhost:5173/)
 docker-compose up
 
 ```
+⚠️ **If you are using docker**: You can't access to the files using the regular path  
+
+
+
 Open on the browser [localhost:5713](http://localhost:5173/)

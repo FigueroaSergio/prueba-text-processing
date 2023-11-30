@@ -18,8 +18,6 @@ document
   });
 
 const DetailsFile = (value: RouterOutput["text"]["result"]) => {
-  console.log("hey");
-
   let rows = value.topWords
     .map(
       (v) => `
@@ -29,7 +27,6 @@ const DetailsFile = (value: RouterOutput["text"]["result"]) => {
   </tr>`
     )
     .reduce((prev, c) => prev + c, "");
-  console.log(rows);
   return `
   <div><strong>Number of letters:</strong>${value.numLetters}</div>
   <div><strong>Number of words:</strong>${value.numWords}</div>
