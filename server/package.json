@@ -1,0 +1,15 @@
+{
+  "name": "@examples/minimal-server",
+  "version": "10.44.1",
+  "private": true,
+  "dependencies": {
+    "@trpc/server": "^10.44.1",
+    "axios": "^1.6.2",
+    "cors": "^2.8.5",
+    "zod": "^3.22.4"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/node": "^18.16.16"
+  }
+}

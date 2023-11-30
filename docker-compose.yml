@@ -1,0 +1,17 @@
+version: "2"
+services:
+  node:
+    container_name: node-text-processor-2
+    build:
+      context: .
+      dockerfile: Dockerfile
+    working_dir: /home/node/app
+    environment:
+      - NODE_ENV=dev
+    volumes:
+      - ./:/home/node/app
+    ports:
+      - 3000:3000
+      - 5173:5173
+    command: "npm run dev"
+    
