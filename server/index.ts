@@ -1,4 +1,4 @@
-import { initTRPC } from "@trpc/server";
+import { inferRouterOutputs, initTRPC } from "@trpc/server";
 import { createHTTPServer } from "@trpc/server/adapters/standalone";
 import { z } from "zod";
 import cors from "cors";
@@ -26,6 +26,7 @@ const appRouter = t.router({
 // Export only the type of a router!
 // This prevents us from importing server code on the client.
 export type AppRouter = typeof appRouter;
+export type RouterOutput = inferRouterOutputs<AppRouter>;
 
 const server = createHTTPServer({
   middleware: cors(),
