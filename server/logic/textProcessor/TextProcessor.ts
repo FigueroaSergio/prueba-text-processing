@@ -1,9 +1,9 @@
-import { textProcessor } from "../core/textProcessor";
+import { textProcessor } from "../../core/textProcessor";
 import { BasicTxtProcessor } from "./BasicProcessor";
 
 export class TextProcessor implements textProcessor {
   private processor = BasicTxtProcessor;
-  constructor(processor?: TextProcessor) {
+  constructor(processor?: textProcessor) {
     if (processor) this.processor = processor;
   }
   process(str: string) {

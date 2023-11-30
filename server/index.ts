@@ -2,8 +2,9 @@ import { initTRPC } from "@trpc/server";
 import { createHTTPServer } from "@trpc/server/adapters/standalone";
 import { z } from "zod";
 import cors from "cors";
-import { loaderFactory } from "./logic/loaderFactory";
-import { TextProcessor } from "./logic/TextProcessor";
+import { loaderFactory } from "./logic/loaderFiles/loaderFactory";
+import { TextProcessor } from "./logic/textProcessor/TextProcessor";
+import { NaturalProcessor } from "./logic/textProcessor/NaturalProcessor";
 
 const t = initTRPC.create({});
 
@@ -17,7 +18,7 @@ const appRouter = t.router({
     .input(z.object({ path: z.string() }))
     .query(async (opt) => {
       const data = await loaderFactory.load(opt.input.path);
-      const result = new TextProcessor().process(data);
+      const result = new TextProcessor(NaturalProcessor).process(data);
       return { input: data, result };
     }),
 });

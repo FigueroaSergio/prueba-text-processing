@@ -1,6 +1,6 @@
 import { z } from "zod";
 import { LoaderLocal } from "./loaderLocal";
-import { loadTxtFile } from "../core/loadTxtFile";
+import { loadTxtFile } from "../../core/loadTxtFile";
 import { LoaderUrl } from "./loaderUrl";
 
 export const loaderFactory: loadTxtFile = {

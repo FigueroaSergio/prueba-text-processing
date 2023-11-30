@@ -1,4 +1,4 @@
-import { loadTxtFile } from "../core/loadTxtFile";
+import { loadTxtFile } from "../../core/loadTxtFile";
 import fs from "node:fs";
 import path from "node:path";
 export const LoaderLocal: loadTxtFile = {

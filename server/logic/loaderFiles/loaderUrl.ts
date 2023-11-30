@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { loadTxtFile } from "../core/loadTxtFile";
+import { loadTxtFile } from "../../core/loadTxtFile";
 import axios from "axios";
 export const LoaderUrl: loadTxtFile = {
   load: async (str) => {

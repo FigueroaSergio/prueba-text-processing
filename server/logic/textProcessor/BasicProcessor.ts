@@ -1,4 +1,4 @@
-import { textProcessor } from "../core/textProcessor";
+import { textProcessor, token } from "../../core/textProcessor";
 
 export const BasicTxtProcessor: textProcessor = {
   process: (str) => {
@@ -6,7 +6,7 @@ export const BasicTxtProcessor: textProcessor = {
       numWords: 0,
       numLetters: 0,
       numSpaces: 0,
-      topWords: [] as string[],
+      topWords: [] as token[],
     };
     const tokens: { [key: string]: number } = {};
     const arr = str.split(/\s/);
@@ -15,8 +15,10 @@ export const BasicTxtProcessor: textProcessor = {
         tokens[word] = 0;
       }
       tokens[word] += 1;
-      if (tokens[word] == 5) {
-        r.topWords.push(word);
+    });
+    Object.entries(tokens).forEach(([key, val]) => {
+      if (val >= 10) {
+        r.topWords.push({ word: key, frequency: val });
       }
     });
     r.numWords = arr.length;
